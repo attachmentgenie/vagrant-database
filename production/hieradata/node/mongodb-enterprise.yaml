@@ -1,0 +1,22 @@
+---
+profiles::mongodb::client_package_name: mongodb-enterprise-shell
+profiles::mongodb::manage_package_repo: true
+profiles::mongodb::server_package_name: mongodb-enterprise-server
+profiles::mongodb::use_enterprise_repo: true
+profiles::nodejs::npm_packages:
+  mongodb: {}
+profiles::php::extensions:
+  mongodb: {}
+profiles::python::packages:
+  python-pymongo: {}
+profiles::repositories::epel: true
+profiles::ruby::gem_packages:
+  mongo: {}
+stacks::bootstrap::repos: true
+stacks::database::mongodb: true
+stacks::runtime::docker: true
+stacks::runtime::nodejs: true
+stacks::runtime::php: true
+stacks::runtime::python: true
+stacks::runtime::ruby: true
+stacks::tools::compile: true

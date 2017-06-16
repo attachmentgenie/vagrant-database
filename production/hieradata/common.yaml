@@ -1,0 +1,5 @@
+---
+classes:
+ - roles::database
+profiles::firewall::ensure: stopped
+stacks::bootstrap::firewall: true

@@ -1,0 +1,61 @@
+[submodule "modules/roles"]
+	path = production/modules/roles
+	url = git@github.com:attachmentgenie/attachmentgenie-roles.git
+[submodule "modules/stacks"]
+	path = production/modules/stacks
+	url = git@github.com:attachmentgenie/attachmentgenie-stacks.git
+[submodule "modules/profiles"]
+	path = production/modules/profiles
+	url = git@github.com:attachmentgenie/attachmentgenie-profiles.git
+[submodule "modules/stdlib"]
+	path = production/modules/stdlib
+	url = git@github.com:puppetlabs/puppetlabs-stdlib.git
+[submodule "modules/firewall"]
+	path = production/modules/firewall
+	url = git@github.com:puppetlabs/puppetlabs-firewall.git
+[submodule "production/modules/mongodb"]
+	path = production/modules/mongodb
+	url = https://github.com/attachmentgenie/puppetlabs-mongodb.git
+	branch = enterprise
+[submodule "production/modules/docker"]
+	path = production/modules/docker
+	url = https://github.com/garethr/garethr-docker.git
+[submodule "production/modules/nodejs"]
+	path = production/modules/nodejs
+	url = https://github.com/voxpupuli/puppet-nodejs.git
+[submodule "production/modules/php"]
+	path = production/modules/php
+	url = https://github.com/voxpupuli/puppet-php.git
+[submodule "production/modules/composer"]
+	path = production/modules/composer
+	url = https://github.com/willdurand/puppet-composer.git
+[submodule "production/modules/python"]
+	path = production/modules/python
+	url = https://github.com/stankevich/puppet-python.git
+[submodule "production/modules/inifile"]
+	path = production/modules/inifile
+	url = https://github.com/puppetlabs/puppetlabs-inifile.git
+[submodule "production/modules/ruby"]
+	path = production/modules/ruby
+	url = https://github.com/puppetlabs/puppetlabs-ruby.git
+[submodule "production/modules/epel"]
+	path = production/modules/epel
+	url = https://github.com/stahnma/puppet-module-epel.git
+[submodule "production/modules/gcc"]
+	path = production/modules/gcc
+	url = https://github.com/puppetlabs/puppetlabs-gcc.git
+[submodule "production/modules/mysql"]
+	path = production/modules/mysql
+	url = https://github.com/puppetlabs/puppetlabs-mysql.git
+[submodule "modules/neo4j"]
+	path = production/modules/neo4j
+	url = git@github.com:mlambrichs/puppet-neo4j.git
+[submodule "modules/concat"]
+	path = production/modules/concat
+	url = git@github.com:puppetlabs/puppetlabs-concat.git
+[submodule "modules/archive"]
+	path = production/modules/archive
+	url = git@github.com:voxpupuli/puppet-archive.git
+[submodule "modules/java"]
+	path = production/modules/java
+	url = git@github.com:puppetlabs/puppetlabs-java.git
