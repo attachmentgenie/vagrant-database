@@ -34,4 +34,11 @@ nodes:
       ports:
         - guest: 22
           host: 4644
+    - name: postgresql
+      hostname: postgresql.database.vagrant
+      box: bento/centos-7.3
+      ip: 192.168.46.45
+      ports:
+        - guest: 22
+          host: 4645
 virtualbox_group: '/Vagrant/database'
