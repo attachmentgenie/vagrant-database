@@ -1,6 +1,6 @@
 ---
-profiles::mysql::databases:
+profiles::database::mysql: true
+profiles::database::mysql::databases:
   testdb:
     user: test
     password: test
-stacks::database::mysql: true

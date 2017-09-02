@@ -1,4 +1,4 @@
 ---
-profiles::neo4j::manage_repo: true
-stacks::database::neo4j: true
-stacks::runtime::java: true
+profiles::database::neo4j: true
+profiles::database::neo4j::manage_repo: true
+profiles::runtime::java: true

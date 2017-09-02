@@ -4,9 +4,6 @@ nodes:
       hostname: mongodb-org.database.vagrant
       box: bento/centos-7.3
       ip: 192.168.46.41
-      ports:
-        - guest: 22
-          host: 4641
       synced_folders:
         - src: 'testbench'
           dst: '/home/vagrant/testbench'
@@ -14,9 +11,6 @@ nodes:
       hostname: mongodb-enterprise.database.vagrant
       box: bento/centos-7.3
       ip: 192.168.46.42
-      ports:
-        - guest: 22
-          host: 4642
       synced_folders:
         - src: 'testbench'
           dst: '/home/vagrant/testbench'
@@ -24,22 +18,12 @@ nodes:
       hostname: mysql.database.vagrant
       box: bento/centos-7.3
       ip: 192.168.46.43
-      ports:
-        - guest: 22
-          host: 4643
     - name: neo4j
       hostname: neo4j.database.vagrant
       box: bento/centos-7.3
       ip: 192.168.46.44
-      ports:
-        - guest: 22
-          host: 4644
     - name: postgresql
       hostname: postgresql.database.vagrant
       box: bento/centos-7.3
       ip: 192.168.46.45
-      ports:
-        - guest: 22
-          host: 4645
-puppet_version: 4.10.4
 virtualbox_group: '/Vagrant/database'

@@ -1,5 +1,5 @@
 ---
 classes:
  - roles::database
-profiles::firewall::ensure: stopped
-stacks::bootstrap::firewall: true
+profiles::bootstrap::firewall: true
+profiles::bootstrap::firewall::ensure: stopped
