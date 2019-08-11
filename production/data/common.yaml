@@ -2,4 +2,4 @@
 classes:
  - roles::database
 profiles::bootstrap::firewall: true
-profiles::bootstrap::firewall::ensure: stopped
+profiles::bootstrap::firewall::purge: false

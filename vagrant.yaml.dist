@@ -1,29 +1,39 @@
 ---
 nodes:
-    - name: mongodb-org
-      hostname: mongodb-org.database.vagrant
-      box: bento/centos-7.3
+    - name: influxdb
+      hostname: influxdb.database.vagrant
+      box: bento/centos-7.6
       ip: 192.168.46.41
-      synced_folders:
-        - src: 'testbench'
-          dst: '/home/vagrant/testbench'
-    - name: mongodb-enterprise
-      hostname: mongodb-enterprise.database.vagrant
-      box: bento/centos-7.3
+      disks:
+        - name: influxdb
+          size: 1
+    - name: mongodb
+      hostname: mongodb.database.vagrant
+      box: bento/centos-7.6
       ip: 192.168.46.42
-      synced_folders:
-        - src: 'testbench'
-          dst: '/home/vagrant/testbench'
+      disks:
+        - name: mongodb
+          size: 1
     - name: mysql
       hostname: mysql.database.vagrant
-      box: bento/centos-7.3
+      box: bento/centos-7.6
       ip: 192.168.46.43
+      disks:
+        - name: mysql
+          size: 1
     - name: neo4j
       hostname: neo4j.database.vagrant
-      box: bento/centos-7.3
+      box: bento/centos-7.6
       ip: 192.168.46.44
+      disks:
+        - name: neo4j
+          size: 1
     - name: postgresql
       hostname: postgresql.database.vagrant
-      box: bento/centos-7.3
+      box: bento/centos-7.6
       ip: 192.168.46.45
+      disks:
+        - name: postgresql
+          size: 1
+puppet_version: 6.4.2
 virtualbox_group: '/Vagrant/database'

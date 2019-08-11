@@ -1,4 +1,0 @@
----
-profiles::database::neo4j: true
-profiles::database::neo4j::manage_repo: true
-profiles::runtime::java: true

@@ -21,11 +21,7 @@ Vagrant.configure("2") do |config|
   else
     plugins = ['vagrant-hostmanager', 'vagrant-puppet-install']
   end
-  plugins.each do |plugin|
-    unless Vagrant.has_plugin?(plugin)
-      raise plugin << " has not been installed."
-    end
-  end
+  config.vagrant.plugins = plugins
 
   ###############################################################################
   # Plugin settings                                                             #
@@ -65,9 +61,9 @@ Vagrant.configure("2") do |config|
   if vagrant_config['virtualbox_group']
     config.vm.provider 'virtualbox' do |v|
       v.customize [
-        'modifyvm', :id,
-        '--groups', vagrant_config['virtualbox_group']
-      ]
+                      'modifyvm', :id,
+                      '--groups', vagrant_config['virtualbox_group']
+                  ]
     end
   end
 
@@ -99,7 +95,17 @@ Vagrant.configure("2") do |config|
           if node["memory"]
             v.memory = node["memory"]
           end
+          if node["disks"]
+            node["disks"].each_with_index do |disk, index|
+              medium_name = "#{node["name"]}_#{disk["name"]}.vdi"
+              unless File.exist?(medium_name)
+                v.customize ['createmedium', '--filename', medium_name, '--variant', 'Fixed', '--size', disk["size"] * 1024]
+              end
+              v.customize ['storageattach', :id,  '--storagectl', 'SATA Controller', '--port', index +1 , '--device', 0, '--type', 'hdd', '--medium', medium_name]
+            end
+          end
         end
+
         srv.vm.network :private_network, ip: node["ip"]
         if node["aliases"]
           srv.hostmanager.aliases = node["aliases"]
@@ -128,9 +134,9 @@ Vagrant.configure("2") do |config|
           end
         else
           if node["hiera_path"]
-            srv.vm.synced_folder node["hiera_path"], "/etc/puppetlabs/code/environments/#{environment}/hieradata"
+            srv.vm.synced_folder node["hiera_path"], "/etc/puppetlabs/code/environments/#{environment}/data"
           else
-            srv.vm.synced_folder "#{environment}/hieradata", "/etc/puppetlabs/code/environments/#{environment}/hieradata"
+            srv.vm.synced_folder "#{environment}/data", "/etc/puppetlabs/code/environments/#{environment}/data"
           end
           srv.vm.provision :puppet do |puppet|
             puppet.environment = "#{environment}"

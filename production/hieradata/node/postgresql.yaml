@@ -1,3 +1,0 @@
----
-profiles::database::postgresql: true
-profiles::database::postgresql::manage_repo: true

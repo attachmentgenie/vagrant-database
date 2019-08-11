@@ -1,0 +1,7 @@
+---
+profiles::database::neo4j: true
+profiles::database::neo4j::device: '/dev/sdb'
+profiles::database::neo4j::manage_disk: true
+profiles::database::neo4j::manage_firewall_entry: true
+profiles::database::neo4j::manage_package_repo: true
+profiles::runtime::java: true
