@@ -10,3 +10,4 @@ hierarchy:
 defaults:
   data_hash: yaml_data
   datadir: data
+
