@@ -1,44 +1,29 @@
-#  example-vagrant
+#  vagrant-database
 
-vagrant starter kit 
+A vagrant setup that create dashboards
 
 ## Requirements
     Virtualbox                  => https://www.virtualbox.org
     Vagrant                     => http://www.vagrantup.com
     vagrant-hostmanager         => vagrant plugin install vagrant-hostmanager
+    vagrant-puppet-install      => vagrant plugin install vagrant-puppet-install
     vagrant-cachier  (optional) => vagrant plugin install vagrant-cachier
-    vagrant-triggers (optional) => vagrant plugin install vagrant-triggers
     
 ## Preparation
+
     git submodule update --init
+    bundle install
     
 ## Setup
+
     vagrant up
 
-## Puppet Development
+## Inspec tests
 
-### Hiera
+    bundle exec rake
+    bundle exec rake inspec[centos7] 
 
-the puppet master deploys a fairly default hiera.yaml
+## TLDR
 
-    [vagrant@puppetmaster ~]$ cat /etc/puppet/hiera.yaml 
-    ---
-    # Managed by puppet
-    :backends:
-      - yaml
-    :hierarchy:
-      - "node/%{::hostname}"
-      - "environment/%{::environment}"
-      - "common"
-    :yaml:
-      :datadir: "/var/lib/hiera"
-
-### Manifests
-
-Place your own manifests in this directory. A fairly standard default.pp is already present which also creates and registers
-a local yum repository called 'localhost'
-
-### Modules
-
-Place your own modules in this directory. 5 modules are alreayd present one of which is stdlib.
+### (G)UI interfaces
 
