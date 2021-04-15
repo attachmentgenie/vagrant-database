@@ -38,5 +38,5 @@ nodes:
       disks:
         - name: postgresql
           size: 1
-puppet_version: 6.20.0
+puppet_version: 6.21.0
 virtualbox_group: '/Vagrant/database'
