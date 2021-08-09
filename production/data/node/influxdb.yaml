@@ -1,6 +1,0 @@
----
-profiles::database::influxdb: true
-profiles::database::influxdb::device: '/dev/sdb'
-profiles::database::influxdb::manage_disk: true
-profiles::database::influxdb::manage_firewall_entry: true
-profiles::database::influxdb::manage_package_repo: true

@@ -3,3 +3,40 @@ classes:
  - roles::database
 profiles::bootstrap::firewall: true
 profiles::bootstrap::firewall::purge: false
+profiles::bootstrap::repos: true
+profiles::bootstrap::repositories::epel: true
+profiles::database::mongodb: true
+profiles::database::mongodb::bind_ip:
+  - '%{::ipaddress_eth1}'
+profiles::database::mongodb::databases:
+  dbTest:
+    user: test
+    password: test
+profiles::database::mongodb::device: '/dev/sdb'
+profiles::database::mongodb::manage_disk: true
+profiles::database::mongodb::manage_firewall_entry: true
+profiles::database::mongodb::manage_package_repo: true
+profiles::database::mongodb::replset: rsTest
+profiles::database::mongodb::replset_members:
+  - 'db01.database.vagrant:27017'
+  - 'db02.database.vagrant:27017'
+  - 'db03.database.vagrant:27017'
+profiles::database::mysql: true
+profiles::database::mysql::databases:
+  testdb:
+    user: test
+    password: test
+profiles::database::mysql::device: '/dev/sdc'
+profiles::database::mysql::manage_disk: true
+profiles::database::mysql::manage_firewall_entry: true
+profiles::database::mysql::manage_package_repo: true
+profiles::database::postgresql: true
+profiles::database::postgresql::databases:
+  testdb:
+    user: test
+    password: test
+profiles::database::postgresql::device: '/dev/sdd'
+profiles::database::postgresql::manage_disk: true
+profiles::database::postgresql::manage_firewall_entry: true
+profiles::database::postgresql::manage_package_repo: true
+

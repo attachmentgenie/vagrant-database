@@ -19,9 +19,6 @@
 [submodule "production/modules/mysql"]
 	path = production/modules/mysql
 	url = https://github.com/puppetlabs/puppetlabs-mysql.git
-[submodule "modules/neo4j"]
-	path = production/modules/neo4j
-	url = git@github.com:mlambrichs/puppet-neo4j.git
 [submodule "modules/concat"]
 	path = production/modules/concat
 	url = git@github.com:puppetlabs/puppetlabs-concat.git
@@ -31,12 +28,6 @@
 [submodule "production/modules/postgresql"]
 	path = production/modules/postgresql
 	url = https://github.com/puppetlabs/puppetlabs-postgresql.git
-[submodule "production/modules/influxdb"]
-	path = production/modules/influxdb
-	url = https://github.com/dgolja/golja-influxdb.git
-[submodule "production/modules/java"]
-	path = production/modules/java
-	url = git@github.com:puppetlabs/puppetlabs-java.git
 [submodule "production/modules/mount_core"]
 	path = production/modules/mount_core
 	url = https://github.com/puppetlabs/puppetlabs-mount_core.git

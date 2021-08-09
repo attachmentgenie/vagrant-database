@@ -1,6 +1,0 @@
----
-profiles::database::postgresql: true
-profiles::database::postgresql::device: '/dev/sdb'
-profiles::database::postgresql::manage_disk: true
-profiles::database::postgresql::manage_firewall_entry: true
-profiles::database::postgresql::manage_package_repo: true

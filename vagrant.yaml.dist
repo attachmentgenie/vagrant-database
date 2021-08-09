@@ -3,40 +3,38 @@ required_plugins:
     - vagrant-hostmanager
     - vagrant-puppet-install
 nodes:
-    - name: influxdb
-      hostname: influxdb.database.vagrant
-      box: bento/centos-7.9
-      ip: 192.168.46.41
-      disks:
-        - name: influxdb
-          size: 1
-    - name: mongodb
-      hostname: mongodb.database.vagrant
+    - name: db01
+      hostname: db01.database.vagrant
       box: bento/centos-7.9
       ip: 192.168.46.42
       disks:
         - name: mongodb
           size: 1
-    - name: mysql
-      hostname: mysql.database.vagrant
+        - name: mysql
+          size: 1
+        - name: postgresql
+          size: 1
+    - name: db02
+      hostname: db02.database.vagrant
       box: bento/centos-7.9
       ip: 192.168.46.43
       disks:
+        - name: mongodb
+          size: 1
         - name: mysql
           size: 1
-    - name: neo4j
-      hostname: neo4j.database.vagrant
+        - name: postgresql
+          size: 1
+    - name: db03
+      hostname: db03.database.vagrant
       box: bento/centos-7.9
       ip: 192.168.46.44
       disks:
-        - name: neo4j
+        - name: mongodb
           size: 1
-    - name: postgresql
-      hostname: postgresql.database.vagrant
-      box: bento/centos-7.9
-      ip: 192.168.46.45
-      disks:
+        - name: mysql
+          size: 1
         - name: postgresql
           size: 1
-puppet_version: 6.21.0
+puppet_version: 6.24.0
 virtualbox_group: '/Vagrant/database'
