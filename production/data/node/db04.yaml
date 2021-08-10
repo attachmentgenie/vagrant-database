@@ -16,11 +16,8 @@ profiles::database::mongodb::device: '/dev/sdb'
 profiles::database::mongodb::manage_disk: true
 profiles::database::mongodb::manage_firewall_entry: true
 profiles::database::mongodb::manage_package_repo: true
-profiles::database::mongodb::replset: rsTest
-profiles::database::mongodb::replset_members:
-  - 'db01.database.vagrant:27017'
-  - 'db02.database.vagrant:27017'
-  - 'db03.database.vagrant:27017'
+profiles::database::mongodb::replset: ~
+profiles::database::mongodb::replset_members: ~
 profiles::database::mysql: true
 profiles::database::mysql::databases:
   testdb:
@@ -36,27 +33,9 @@ profiles::database::postgresql::databases:
     user: test
     password: test
 profiles::database::postgresql::device: '/dev/sdd'
-profiles::database::postgresql::listen_address: '127.0.0.1,%{::ipaddress_eth1}'
+profiles::database::postgresql::listen_address: '%{::ipaddress_eth1}'
 profiles::database::postgresql::manage_disk: true
 profiles::database::postgresql::manage_firewall_entry: true
 profiles::database::postgresql::manage_package_repo: true
-profiles::database::postgresql::patroni: true
-profiles::orchestration::consul: true
-profiles::orchestration::consul::config_defaults:
-  "addresses": {
-    "http": '127.0.0.1 %{::ipaddress_eth1}'
-  }
-  advertise_addr: '%{::ipaddress_eth1}'
-  bootstrap_expect: 3
-  server: true
-  ui_config:
-    enabled: true
-  retry_join:
-    - db01.database.vagrant
-  data_dir: /var/lib/consul
-profiles::orchestration::consul::install_method: package
-profiles::orchestration::consul::manage_package_repo: true
-profiles::orchestration::consul::manage_sd_service: true
-profiles::orchestration::consul::sd_service_endpoint: 'http://%{::ipaddress_eth1}:8500'
-profiles::orchestration::consul::server: true
-profiles::orchestration::consul::ui: true
+profiles::database::postgresql::patroni: false
+profiles::orchestration::consul: false

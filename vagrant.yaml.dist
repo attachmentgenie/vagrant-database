@@ -36,5 +36,16 @@ nodes:
           size: 1
         - name: postgresql
           size: 1
+    - name: db04
+      hostname: db04.database.vagrant
+      box: bento/centos-7.9
+      ip: 192.168.46.45
+      disks:
+        - name: mongodb
+          size: 1
+        - name: mysql
+          size: 1
+        - name: postgresql
+          size: 1
 puppet_version: 6.24.0
 virtualbox_group: '/Vagrant/database'

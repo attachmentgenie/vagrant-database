@@ -10,7 +10,6 @@ vagrant.yaml
 Boltdir/.rerun.json
 Boltdir/site-modules/
 # Module directory
-modules/
 .terraform/
 # Secrets files
 *.tfvars

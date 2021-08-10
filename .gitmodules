@@ -34,3 +34,15 @@
 [submodule "production/modules/lvm"]
 	path = production/modules/lvm
 	url = https://github.com/puppetlabs/puppetlabs-lvm.git
+[submodule "production/modules/patroni"]
+	path = production/modules/patroni
+	url = https://github.com/tailored-automation/puppet-module-patroni.git
+[submodule "production/modules/consul"]
+	path = production/modules/consul
+	url = https://github.com/solarkennedy/puppet-consul.git
+[submodule "production/modules/systemd"]
+	path = production/modules/systemd
+	url = https://github.com/camptocamp/puppet-systemd.git
+[submodule "production/modules/hashi_stack"]
+	path = production/modules/hashi_stack
+	url = https://github.com/voxpupuli/puppet-hashi_stack.git
