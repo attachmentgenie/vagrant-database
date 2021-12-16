@@ -6,7 +6,7 @@ nodes:
     - name: db01
       hostname: db01.database.vagrant
       box: bento/centos-7.9
-      ip: 192.168.46.42
+      ip: 192.168.56.42
       disks:
         - name: mongodb
           size: 1
@@ -17,7 +17,7 @@ nodes:
     - name: db02
       hostname: db02.database.vagrant
       box: bento/centos-7.9
-      ip: 192.168.46.43
+      ip: 192.168.56.43
       disks:
         - name: mongodb
           size: 1
@@ -28,7 +28,7 @@ nodes:
     - name: db03
       hostname: db03.database.vagrant
       box: bento/centos-7.9
-      ip: 192.168.46.44
+      ip: 192.168.56.44
       disks:
         - name: mongodb
           size: 1
@@ -39,7 +39,7 @@ nodes:
     - name: db04
       hostname: db04.database.vagrant
       box: bento/centos-7.9
-      ip: 192.168.46.45
+      ip: 192.168.56.45
       disks:
         - name: mongodb
           size: 1
@@ -47,5 +47,4 @@ nodes:
           size: 1
         - name: postgresql
           size: 1
-puppet_version: 6.24.0
 virtualbox_group: '/Vagrant/database'
